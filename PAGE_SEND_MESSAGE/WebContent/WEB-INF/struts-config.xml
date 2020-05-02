@@ -1,26 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts-config PUBLIC
-"-//Apache Software Foundation//DTD Struts Configuration
-1.2//EN" "http://jakarta.apache.org/struts/dtds/strutsconfig_
-1_2.dtd">
+       "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+       "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 <struts-config>
-
-<form-beans>
-	<form-bean name="MensajeForm" type="javabeans.MensajeForm"/>
-</form-beans>
-<action-mappings>
-	<action name="MensajeForm" path="/registrar" scope="request"
-	type="servlets.RegistrarAction" validate="false">
-	<forward name="registrado" path="/inicio.jsp"/>
-	</action>
-	<action path="/paginamensajes"
-	type="servlets.VerMensajesAction">
-	<forward name="mensajes" path="/listamensajes.jsp"/>
-	<forward name="nomensajes" path="/sinmensajes.jsp"/>
-	</action>
-</action-mappings>
-<global-forwards>
-	<forward name="paginaregistro" path="/registromensajes.jsp"/>
-	<forward name="paginasolicitud" path="/solicitud.html"/>
-</global-forwards>
+	<form-beans>
+		<form-bean name="MensajeForm" type="javabeans.MensajeForm"/>
+	</form-beans>
+	<global-forwards>
+		<forward name="paginaregistro" path="/registromensajes.jsp"/>
+		<forward name="paginasolicitud" path="/solicitud.html"/>
+	</global-forwards>
+	<action-mappings>
+		<action name="MensajeForm" path="/registrar" scope="request" type="servlets.RegistrarAction" validate="false">
+		<forward name="registrado" path="/inicio.jsp"/>
+		</action>
+		<action path="/paginamensajes" type="servlets.VerMensajesAction">
+		<forward name="mensajes" path="/listamensajes.jsp"/>
+		<forward name="nomensajes" path="/sinmensajes.jsp"/>
+		</action>
+	</action-mappings>
+	
+	<message-resources parameter="com.mkyong.common.properties.Common"/>
 </struts-config>

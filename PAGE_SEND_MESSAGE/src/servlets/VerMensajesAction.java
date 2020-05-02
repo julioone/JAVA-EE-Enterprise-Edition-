@@ -9,7 +9,8 @@ public class VerMensajesAction extends Action{
 	private final static String SINMENSAJES = "nomensajes";
 	
 	public ActionForward execute(ActionMapping mapping,
-	                             ActionForm form,HttpServletRequest request,
+	                             ActionForm form,
+	                             HttpServletRequest request,
 	                             HttpServletResponse response)
 	throws Exception {
 		//obtiene los parámetros de contexto relativos
@@ -18,7 +19,7 @@ public class VerMensajesAction extends Action{
 		getInitParameter("driver");
 		String cadenacon=this.getServlet().getServletContext().
 		getInitParameter("cadenacon");
-		Operaciones oper=new Operaciones(driver,cadenacon);
+		Operaciones oper = new Operaciones(driver,cadenacon);
 		//recupera los mensajes asociados al destinatario
 		ArrayList mensajes=oper.getMensajes(request.getParameter("nombre"));
 		if(mensajes==null || mensajes.size()==0){
