@@ -4,17 +4,17 @@ import javabeans.*;
 import java.util.*;
 public class Operaciones {
 	
-	private String driver, cadenacon;
+	public static final String driver = "com.mysql.cj.jdbc.Driver";//"com.mysql.jdbc.Driver";
+	public static final String cadenacon = "jdbc:mysql://localhost:3306/dev0";
 	
-	public Operaciones(String driver, String cadenacon) {
-		this.driver=driver;
-		this.cadenacon=cadenacon;
+	public Operaciones() {
+		
 		}
 	public Connection obtenerconexion(){
 		Connection cn=null;
 		try{
-			Class.forName(driver);
-			cn=DriverManager.getConnection(cadenacon,"developer","developer");
+			//Class.forName(driver);
+			cn=DriverManager.getConnection(cadenacon,"JBOSS","JBOSS");
 		}
 		catch(Exception e){e.printStackTrace();}
 		return cn;

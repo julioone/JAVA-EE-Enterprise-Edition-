@@ -14,9 +14,9 @@ public class RegistrarAction extends org.apache.struts.action.Action {
 		MensajeForm men=(MensajeForm)form;
 		//obtiene los parámetros de contexto relativos
 		//a la base de datos y crea el objeto del Modelo
-		String driver = this.getServlet().getServletContext().getInitParameter("driver");
-		String cadenacon = this.getServlet().getServletContext().getInitParameter("cadenacon");
-		Operaciones oper=new Operaciones(driver,cadenacon);
+		//String driver = this.getServlet().getServletContext().getInitParameter("driver");
+		//String cadenacon = this.getServlet().getServletContext().getInitParameter("cadenacon");
+		Operaciones oper=new Operaciones();
 		oper.registro(men);
 		return mapping.findForward(SUCCESS);
 	}

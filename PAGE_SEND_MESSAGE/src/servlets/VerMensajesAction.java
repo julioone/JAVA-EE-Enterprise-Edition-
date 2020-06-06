@@ -15,13 +15,11 @@ public class VerMensajesAction extends Action{
 	throws Exception {
 		//obtiene los parámetros de contexto relativos
 		//a la base de datos y crea el objeto del Modelo
-		String driver=this.getServlet().getServletContext().
-		getInitParameter("driver");
-		String cadenacon=this.getServlet().getServletContext().
-		getInitParameter("cadenacon");
-		Operaciones oper = new Operaciones(driver,cadenacon);
+		//String driver=this.getServlet().getServletContext().getInitParameter("driver");
+		//String cadenacon=this.getServlet().getServletContext().getInitParameter("cadenacon");
+		Operaciones oper = new Operaciones();
 		//recupera los mensajes asociados al destinatario
-		ArrayList mensajes=oper.getMensajes(request.getParameter("nombre"));
+		ArrayList mensajes= oper.getMensajes(request.getParameter("nombre"));
 		if(mensajes==null || mensajes.size()==0){
 			return mapping.findForward(SINMENSAJES);
 		}
