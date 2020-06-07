@@ -4,8 +4,8 @@ import javabeans.*;
 import java.util.*;
 public class Operaciones {
 	
-	public static final String driver = "com.mysql.cj.jdbc.Driver";//"com.mysql.jdbc.Driver";
-	public static final String cadenacon = "jdbc:mysql://localhost:3306/dev0";
+	public static final String driver = "com.mysql.cj.jdbc.Driver"; //"com.mysql.jdbc.Driver";//  
+	public static final String cadenacon = "jdbc:mysql://ujewrtvmzmnzjqk5:5wZNie22AIN9MfmBX9lm@borhhmrqe51mgzryrksu-mysql.services.clever-cloud.com:3306/borhhmrqe51mgzryrksu";
 	
 	public Operaciones() {
 		
@@ -14,7 +14,7 @@ public class Operaciones {
 		Connection cn=null;
 		try{
 			//Class.forName(driver);
-			cn=DriverManager.getConnection(cadenacon,"JBOSS","JBOSS");
+			cn=DriverManager.getConnection(cadenacon,"ujewrtvmzmnzjqk5","5wZNie22AIN9MfmBX9lm");
 		}
 		catch(Exception e){e.printStackTrace();}
 		return cn;
